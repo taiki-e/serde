@@ -167,6 +167,11 @@
         use_self
     )
 )]
+#![no_std]
+
+extern crate alloc;
+#[cfg(feature = "std")]
+extern crate std;
 
 #[macro_use]
 extern crate serde;

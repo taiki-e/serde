@@ -1,5 +1,5 @@
-use std::error;
-use std::fmt::{self, Display};
+use alloc::string::{String, ToString};
+use core::fmt::{self, Display};
 
 use serde::{de, ser};
 
@@ -30,7 +30,8 @@ impl fmt::Display for Error {
     }
 }
 
-impl error::Error for Error {
+#[cfg(feature = "std")]
+impl std::error::Error for Error {
     fn description(&self) -> &str {
         &self.msg
     }

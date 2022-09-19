@@ -4,6 +4,9 @@ use serde::de::{
     VariantAccess, Visitor,
 };
 
+use alloc::borrow::ToOwned;
+use alloc::string::ToString;
+
 use error::Error;
 use token::Token;
 

@@ -4,7 +4,7 @@ use de::Deserializer;
 use ser::Serializer;
 use token::Token;
 
-use std::fmt::Debug;
+use core::fmt::Debug;
 
 /// Runs both `assert_ser_tokens` and `assert_de_tokens`.
 ///

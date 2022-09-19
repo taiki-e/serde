@@ -46,7 +46,8 @@ macro_rules! assert_next_token {
     ($ser:expr, $actual:ident { $($k:ident),* }) => {{
         let compare = ($($k,)*);
         let field_format = || {
-            use std::fmt::Write;
+            use core::fmt::Write;
+            use alloc::string::String;
             let mut buffer = String::new();
             $(
                 write!(&mut buffer, concat!(stringify!($k), ": {:?}, "), $k).unwrap();
